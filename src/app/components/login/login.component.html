@@ -1,0 +1,30 @@
+<div class="container">
+  <header>
+    <div class="logo">
+      <img src="../../../assets/icons/logo.png" alt="logo">
+    </div>
+  </header>
+  <div class="login">
+    <h1 class="login__title">Добро пожаловать</h1>
+    <h4 class="login__subtitle">Авторизуйтесь чтобы продолжить</h4>
+    <form [formGroup]="form" (keydown.enter)="login()" class="login__form" action="">
+      <div class="input-wrap">
+        <label class="label" for="email">Логин*</label>
+        <input id="email" formControlName="login" class="input" type="text" required="" placeholder="mail@simmmple.com">
+      </div>
+      <div class="input-wrap">
+        <label class="label" for="password">Пароль*</label>
+        <input id="password" formControlName="password" class="input" type="text" required="" placeholder="Минимум 8 символов">
+      </div>
+    </form>
+    <div class="options">
+      <div class="options__remember">
+        <input class="checkbox" type="checkbox" name="remember" id="remember">
+        <label for="remember">Запомнить</label>
+      </div>
+      <a href="" class="options__forget">Забыли пароль?</a>
+    </div>
+    <button type="submit" class="btn btn-blue login-btn" (click)="login()">Войти</button>
+  </div>
+</div>
+
