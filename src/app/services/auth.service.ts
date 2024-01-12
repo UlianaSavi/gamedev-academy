@@ -16,12 +16,11 @@ export class AuthService {
     this.isAuthenticated = !!localStorage.getItem(this.authSecretKey);
   }
 
-  login(formData: {login: string, password: string}): void {
+  public login(formData: {login: string, password: string}): void {
     const ansver: Observable<UserData> = this.http.post<UserData>(`${SERVER_URL}/api/login`, formData);
     ansver.subscribe({
-      next: (data) => {
-        console.log('data', data);
-        localStorage.setItem(this.authSecretKey, data.data.tokens.token);
+      next: (data: UserData) => {
+        localStorage.setItem(this.authSecretKey, data.tokens.token);
         this.isAuthenticated = true;
         this.router.navigate(['dashboard'])
       },
@@ -29,7 +28,7 @@ export class AuthService {
     })
   }
 
-  isLoggedIn(): boolean {
+  public isLoggedIn(): boolean {
     return this.isAuthenticated;
   }
 }
