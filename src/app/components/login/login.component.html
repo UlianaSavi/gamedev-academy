@@ -10,11 +10,21 @@
     <form [formGroup]="form" (keydown.enter)="login()" class="login__form" action="">
       <div class="input-wrap">
         <label class="label" for="email">Логин*</label>
+        <span *ngIf="isInvalid('login')" class="icon icon-error"></span>
         <input id="email" formControlName="login" class="input" type="text" required="" placeholder="mail@simmmple.com">
       </div>
       <div class="input-wrap">
         <label class="label" for="password">Пароль*</label>
-        <input id="password" formControlName="password" class="input" type="text" required="" placeholder="Минимум 6 символов">
+        <span *ngIf="isInvalid('password')" class="icon icon-error"></span>
+        <span *ngIf="!isInvalid('password')"
+          class="icon"
+          [ngClass]="{'icon-eye-open': !hidePassword, 'icon-eye-close': hidePassword}"
+          (click)="setPasswordVisible()"></span>
+        <input id="password"
+          formControlName="password"
+          class="input" [type]="hidePassword ? 'password' : 'text'"
+          required=""
+          placeholder="Минимум 6 символов">
       </div>
     </form>
     <div class="options">
