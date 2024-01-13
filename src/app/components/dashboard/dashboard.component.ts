@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+import { MAX_MESSAGE_LEN } from 'src/app/types';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+  public message = new FormControl('', [Validators.required, Validators.maxLength(MAX_MESSAGE_LEN)]);
 
+  public asd() {
+    if (this.message.valid) {
+      // TODO: Сделать вывод сообщения в тултип
+      console.log(this.message.value);
+    }
+  }
 }

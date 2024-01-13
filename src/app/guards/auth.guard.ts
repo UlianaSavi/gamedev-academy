@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { ActivatedRouteSnapshot, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
 import { CookieService } from "../services/cookie.service";
+import { Paths } from "../app-routing.module";
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +14,12 @@ export class AuthGuard {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (state.url !== '/login' && !this.cookieService.hasCookie()) {
-      this.router.navigate(['login']);
+    if (state.url !== `/${Paths.login}` && !this.cookieService.hasCookie()) {
+      this.router.navigate([Paths.login]);
       return false;
     }
-    if (state.url === '/login' && this.cookieService.hasCookie()) {
-      this.router.navigate(['dashboard']);
+    if (state.url === `/${Paths.login}` && this.cookieService.hasCookie()) {
+      this.router.navigate([Paths.dashboard]);
       return false;
     }
     return true;

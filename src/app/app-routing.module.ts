@@ -4,10 +4,15 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthGuard } from './guards/auth.guard';
 
+export enum Paths {
+  login = 'login',
+  dashboard = 'dashboard',
+}
+
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent, canActivate: [AuthGuard]},
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: '', redirectTo: Paths.login, pathMatch: 'full' },
+  { path: Paths.login, component: LoginComponent, canActivate: [AuthGuard]},
+  { path: Paths.dashboard, component: DashboardComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

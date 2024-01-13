@@ -14,12 +14,12 @@
   </div>
   <div class="message">
     <label class="message__title" for="message">Сообщение</label>
-    <input class="input message__input" type="text" name="message" id="message" placeholder="1500">
+    <input [formControl]="message" class="input message__input" type="text" name="message" id="message" placeholder="1500">
   </div>
   <div class="btns">
     <button class="btn btn-red" type="button">Ошибка</button>
     <button class="btn btn-yellow" type="button">Предупреждение</button>
     <button class="btn btn-green" type="button">Успех</button>
-    <button class="btn btn-blue" type="button">Сообщение</button>
+    <button class="btn btn-blue" [disabled]="!message.value?.length" type="button" (click)="asd()">Сообщение</button>
   </div>
 </div>
