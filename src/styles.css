@@ -1,5 +1,7 @@
 :root {
   --red: #FC5A5A;
+  --yellow: #FCCA00;
+  --green: #249F5D;
   --grey: #6F727A;
   --blue: #4C54F4;
   --white: white;
@@ -28,6 +30,7 @@ body {
   max-width: 118px;
   min-height: 54px;
   font-size: 18px;
+  font-weight: 500;
   border: none;
   border-radius: 10px;
   color: var(--white);
@@ -37,6 +40,19 @@ body {
 
 .btn-blue {
   background-color: var(--blue);
+}
+
+.btn-red {
+  background-color: var(--red);
+}
+
+.btn-yellow {
+  background-color: var(--yellow);
+  color: var(--black-brand);
+}
+
+.btn-green {
+  background-color: var(--green);
 }
 
 .btn:hover {
@@ -71,7 +87,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  margin: 0 auto;
+  margin: 50px 50px 0 50px;
 }
 
 .label {

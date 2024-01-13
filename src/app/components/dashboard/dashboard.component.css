@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 30px;
 }
 
 .user-info {
@@ -27,4 +28,27 @@
 
 .user-info__id {
   font-weight: 500;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.message__input {
+  width: 617px;
+  height: auto;
+  padding: 16px 0 16px 14px;
+}
+
+.btns {
+  display: flex;
+  gap: 32px;
+}
+
+.btn {
+  padding: 16px 32px;
+  max-width: fit-content;
 }
