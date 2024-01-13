@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 import { MAX_MESSAGE_LEN } from 'src/app/types';
 
 @Component({
@@ -14,6 +15,7 @@ export class DashboardComponent {
     if (this.message.valid) {
       // TODO: Сделать вывод сообщения в тултип
       console.log(this.message.value);
+      console.log('user', AuthService.user);
     }
   }
 }
