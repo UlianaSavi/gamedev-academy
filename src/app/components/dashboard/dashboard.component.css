@@ -1,0 +1,30 @@
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  line-height: 100%;
+  font-style: normal;
+  letter-spacing: -0.28px;
+  color: var(--black-brand);
+}
+
+.user__ava {
+  width: 65px;
+  height: 65px;
+}
+
+.user-info__name {
+  margin: 0;
+  font-weight: 700;
+}
+
+.user-info__id {
+  font-weight: 500;
+}

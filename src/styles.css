@@ -4,6 +4,7 @@
   --blue: #4C54F4;
   --white: white;
   --lite-grey: #E0E2E7;
+  --black-brand: #101D2D;
 }
 
 body {
@@ -52,10 +53,23 @@ body {
 .container {
   width: 100%;
   max-width: 1366px;
-  height: 95vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.container-center {
+  height: 95vh;
   align-items: center;
+}
+
+.container-left {
+  width: 100%;
+  max-width: 1366px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
   margin: 0 auto;
 }
