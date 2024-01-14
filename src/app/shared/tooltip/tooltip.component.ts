@@ -12,6 +12,7 @@ export class TooltipComponent {
   }];
 
   public create(type: TooltipType, message: string, iconSrc: string): void {
+    // TODO: добавить везде где нужно по коду
     this.tooltips.push({
       type: type,
       message: message,
