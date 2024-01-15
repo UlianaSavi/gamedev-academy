@@ -1,6 +1,7 @@
 export interface ITooltip {
   type: TooltipBorderType,
   message: string,
+  creationTime: Date
 }
 
 export enum TooltipBorderType {
