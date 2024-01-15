@@ -16,9 +16,10 @@
   color: var(--black-brand);
 }
 
-.user__ava {
+.user__ava img {
   width: 65px;
   height: 65px;
+  border-radius: 50%;
 }
 
 .user-info__name {

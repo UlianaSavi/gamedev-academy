@@ -1,25 +1,21 @@
-import { Component } from '@angular/core';
-import { ITooltip, TooltipType } from './tooltip.model';
+import { Component, OnInit } from '@angular/core';
+import { ITooltip } from './tooltip.model';
+import { TooltipService } from './tooltip.service';
 @Component({
   selector: 'app-tooltip',
   templateUrl: './tooltip.component.html',
   styleUrls: ['./tooltip.component.css']
 })
-export class TooltipComponent {
-  public tooltips: ITooltip[] = [{
-    type: TooltipType.fail,
-    message: 'Сообщение об ошибке',
-  }];
+export class TooltipComponent implements OnInit {
+  constructor(private tooltipService: TooltipService) {}
 
-  public create(type: TooltipType, message: string, iconSrc: string): void {
-    // TODO: добавить везде где нужно по коду
-    this.tooltips.push({
-      type: type,
-      message: message,
-    });
+  public tooltips: ITooltip[] = [];
+
+  ngOnInit(): void {
+    this.tooltips = this.tooltipService.tooltips;
   }
 
-  public close(): void {
-    // TODO: закрытие уведомления по клику и по истечению таймера (мб разделить на 2 функции)
+  public close(id: number) {
+    this.tooltipService.close(id);
   }
 }

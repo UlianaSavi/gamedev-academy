@@ -9,6 +9,7 @@
 }
 
 .tooltip {
+  position: relative;
   display: flex;
   padding-left: 10px;
   gap: 5px;
