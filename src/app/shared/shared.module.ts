@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { TooltipIconComponent } from './tooltip-icon/tooltip-icon.component';
 import { TooltipService } from './tooltip/tooltip.service';
@@ -12,7 +13,8 @@ import { TooltipService } from './tooltip/tooltip.service';
     TooltipIconComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule
   ],
   providers: [TooltipService],
   exports: [
