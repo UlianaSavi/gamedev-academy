@@ -1,6 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { TooltipBorderType, ITooltip } from './tooltip.model';
-import { TOOLTIP_TIMER } from 'src/app/types';
+import { TOOLTIPS_MAX_LENGTH, TOOLTIP_TIMER } from 'src/app/types';
 import { Subject, takeUntil, timer } from 'rxjs';
 
 @Injectable()
@@ -16,6 +16,10 @@ export class TooltipService implements OnDestroy {
   }
 
   public create(type: TooltipBorderType, message: string): void {
+    if (this.tooltips.length >= TOOLTIPS_MAX_LENGTH) {
+      const first = 0;
+      this.close(first); // close oldest tooltip if it's already max number of tooltips
+    }
     this.tooltips.push({
       type: type,
       message: message,
