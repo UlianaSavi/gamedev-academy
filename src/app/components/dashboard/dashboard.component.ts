@@ -17,7 +17,7 @@ export class DashboardComponent {
   public user = AuthService.user;
   public types = TooltipMessageType;
 
-  public sendMessage(type: TooltipMessageType, isCustomMessage: boolean = false) {
+  public sendMessage(type: TooltipMessageType, isCustomMessage: boolean = false): void {
     if (isCustomMessage) {
       this.tooltipService.create(TooltipBorderType.warning, this.message.value || '');
     } else {

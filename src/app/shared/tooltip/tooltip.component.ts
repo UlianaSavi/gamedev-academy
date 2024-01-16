@@ -26,7 +26,7 @@ export class TooltipComponent implements OnInit {
     this.tooltips = this.tooltipService.tooltips;
   }
 
-  public close(id: number) {
+  public close(id: number): void {
     this.tooltipService.close(id);
   }
 }

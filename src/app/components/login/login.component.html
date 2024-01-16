@@ -26,14 +26,14 @@
         <input id="password" formControlName="password" class="input" [type]="hidePassword ? 'password' : 'text'"
           required="" placeholder="Минимум 6 символов">
       </div>
-    </form>
-    <div class="options">
-      <div class="options__remember">
-        <input class="checkbox" type="checkbox" name="remember" id="remember">
-        <label for="remember">Запомнить</label>
+      <div class="options">
+        <div class="options__remember">
+          <input class="checkbox" type="checkbox" name="remember" id="remember" formControlName="rememberPassword">
+          <label for="remember">Запомнить</label>
+        </div>
+        <a href="" class="options__forget">Забыли пароль?</a>
       </div>
-      <a href="" class="options__forget">Забыли пароль?</a>
-    </div>
-    <button type="submit" class="btn btn-blue login-btn" (click)="login()">Войти</button>
+      <button type="submit" class="btn btn-blue login-btn" (click)="login()">Войти</button>
+    </form>
   </div>
 </div>
