@@ -1,0 +1,15 @@
+<div class="tooltip-wrap">
+  <div *ngFor="let tooltip of tooltips; let i = index">
+    <div class="tooltip" [ngStyle]="{'border-left': '5px solid' + tooltip.type}" @smoothShow>
+      <div class="tooltip__img">
+        <app-svg [fillColor]="tooltip.type" ></app-svg>
+      </div>
+      <div class="tooltip__text">
+        {{ tooltip.message }}
+      </div>
+      <div class="tooltip__close" (click)="close(i)">
+        <img src="../../../assets/icons/close.png" alt="Close icon">
+      </div>
+    </div>
+  </div>
+</div>

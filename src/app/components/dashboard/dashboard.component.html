@@ -1,0 +1,33 @@
+<div class="container container-left">
+  <div class="user">
+    <div class="user__ava">
+      <img src="{{ user?.userAvatar }}" alt="User avatar">
+    </div>
+    <div class="user-info">
+      <h4 class="user-info__name">
+        {{ user?.userName }}
+      </h4>
+      <span class="user-info__id">
+        ID пользователя: <b>{{ user?.userId }}</b>
+      </span>
+    </div>
+  </div>
+  <div class="message">
+    <label class="message__title" for="message">Сообщение</label>
+    <input [formControl]="message"
+      class="input message__input"
+      type="text"
+      name="message"
+      id="message"
+      placeholder="1500">
+  </div>
+  <div class="btns">
+    <button class="btn btn-red" type="button" (click)="sendMessage(types.fail)">Ошибка</button>
+    <button class="btn btn-yellow" type="button" (click)="sendMessage(types.warning)">Предупреждение</button>
+    <button class="btn btn-green" type="button" (click)="sendMessage(types.success)">Успех</button>
+    <button class="btn btn-blue"
+      [disabled]="!message.value?.length"
+      type="button"
+      (click)="sendMessage(types.warning, true)">Сообщение</button>
+  </div>
+</div>

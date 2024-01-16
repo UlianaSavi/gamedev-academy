@@ -1,0 +1,55 @@
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  line-height: 100%;
+  font-style: normal;
+  letter-spacing: -0.28px;
+  color: var(--black-brand);
+}
+
+.user__ava img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+}
+
+.user-info__name {
+  margin: 0;
+  font-weight: 700;
+}
+
+.user-info__id {
+  font-weight: 500;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.message__input {
+  width: 617px;
+  height: auto;
+  padding: 16px 0 16px 14px;
+}
+
+.btns {
+  display: flex;
+  gap: 32px;
+}
+
+.btn {
+  padding: 16px 32px;
+  max-width: fit-content;
+}
