@@ -32,3 +32,10 @@
   right: 8px;
   cursor: pointer;
 }
+
+.tooltip__text {
+  width: 100%;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
